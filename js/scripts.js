@@ -2,7 +2,7 @@
 
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=85';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=84';
 
 //functions
 function add (pokemon) {
@@ -97,6 +97,15 @@ function showDetails (item) {
     modalBody.append(pokemonHeight);
 
   }
+
+  $(document).ready(function(){
+  $('#myInput').on('keyup', function() {
+  let value = $(this).val().toLowerCase();
+  $(".search-button").filter(function() {
+  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  });
+  });
+  });
 
   return {
   add: add,
