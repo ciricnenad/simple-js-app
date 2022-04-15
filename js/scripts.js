@@ -19,7 +19,7 @@ function addListItem (pokemon) {
   listPokemon.classList.add('group-list-item');
   let button = document.createElement('button');
   button.innerText = pokemon.name;
-  button.classList.add('btn-primary');
+  button.classList.add('btn-primary', 'search-button');
   button.setAttribute('data-toggle', 'modal');
   button.setAttribute('data-target', '#pokemonModal');
   listPokemon.append(button);
